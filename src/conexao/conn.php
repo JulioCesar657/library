@@ -1,10 +1,10 @@
 <?php
 
     // Declarar as variáveis necessárias para gerar a minha conexão com o banco de dados ....
-    $hostname = "fdb30.awardspace.net";
-    $dbname = "3767631_library";
-    $username = "3767631_library";
-    $password = "julinho_657";
+    $hostname = "fdb21.awardspace.net";
+    $dbname = "3850603_mylibrary";
+    $username = "3850603_mylibrary";
+    $password = "Jul1o_657_470";
 
     try {
         $pdo = new PDO('mysql:host='.$hostname.';dbname='.$dbname, $username, $password);
