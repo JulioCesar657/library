@@ -6,7 +6,7 @@ $(document).ready(function() {
 
         Swal.fire({
             title: 'Library',
-            text: 'Deseja realmente excluir o registro?',
+            text: 'Deseja excluir o registro selecionado?',
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Sim',
