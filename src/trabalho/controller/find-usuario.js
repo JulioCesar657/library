@@ -18,12 +18,12 @@ $(document).ready(function() {
                 url: 'src/usuario/model/find-usuario.php',
                 success: function(dados) {
                     for (const dado of dados) {
-                        $('#autores').append(`<input type="text" name="" id="${dado.IDUSUARIO}" class="form-control indicado" value="${dado.NOME}" disabled>`)
+                        $('#autores').append(`<input type="text" name="" id="${dado.IDUSUARIO}" class="form-control result-autor" value="${dado.NOME}" >`)
                     }
-                    $('.indicado').click(function(e) {
+                    $('.result-autor').click(function(e) {
                         $('#autores').empty()
                         $('#AUTOR').empty()
-                        $('#lista').append(`<input type="text" name="" id="${dado.IDUSUARIO}" class="form-control indicado" value="${dado.NOME}">`)
+                        $('#lista').append(`< input type="text" name="" id="${dado.IDUSUARIO}" class="form-control result-autor" value="${dado.NOME}"> `)
                     })
                 }
             })
