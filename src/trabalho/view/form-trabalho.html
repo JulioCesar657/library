@@ -38,12 +38,16 @@
     <div class="form-group" id="autores">
 
     </div>
-    <div class="form-group" id="lista">
+    <div id="result" class="form-group">
 
     </div>
+
+
     <div class="form-group">
+    <form action="src/trabalho/model/enviar-imagem.php" method="post" enctype="multipart/form-data">
         <label>Arquivo</label>
-        <input type="text" name="ARQUIVO" id="ARQUIVO" class="form-control">
+        <input type="file" name="ARQUIVO" class="form-control" id="ARQUIVO">
+    </form>
     </div>
 
     <input type="hidden" name="IDTRABALHO" id="IDTRABALHO">

@@ -1,3 +1,21 @@
+function selectAuthor() {
+    $('.result-autor').click(function(e) {
+        e.preventDefault()
+
+        let idElement = $(this).attr('id')
+        let nameElement = $(this).attr('data-name')
+
+        $('#result').append(`
+        <input type="text" class="form-control" value="${nameElement}" disabled>
+        <input type="hidden" name="USUARIO_IDUSUARIO" id="USUARIO_IDUSUARIO" value="${idElement}" />`)
+
+        $('#' + idElement).hide()
+
+    })
+}
+
+
+
 $(document).ready(function() {
 
     $('#AUTOR').keyup(function(e) {
@@ -5,10 +23,10 @@ $(document).ready(function() {
 
         let NOME = `NOME=${$(this).val()}`
 
-        $('#autores').empty()
-        $('#lista').empty()
 
         if ($(this).val().length >= 3) {
+            
+            $('#autores').empty()
 
             $.ajax({
                 dataType: 'json',
@@ -18,15 +36,14 @@ $(document).ready(function() {
                 url: 'src/usuario/model/find-usuario.php',
                 success: function(dados) {
                     for (const dado of dados) {
-                        $('#autores').append(`<input type="text" name="" id="${dado.IDUSUARIO}" class="form-control indicado" value="${dado.NOME}" disabled>`)
+                        $('#autores').append(`<input type="text" id="${dado.IDUSUARIO}" data-name="${dado.NOME}" class="form-control result-autor" value="${dado.NOME}">`)
                     }
-                    $('.indicado').click(function(e) {
-                        $('#autores').empty()
-                        $('#AUTOR').empty()
-                        $('#lista').append(`<input type="text" name="" id="${dado.IDUSUARIO}" class="form-control indicado" value="${dado.NOME}">`)
-                    })
+                    selectAuthor()
                 }
             })
+
+        }else{
+        $('#autores').empty()
 
         }
     })
