@@ -1,12 +1,12 @@
 function selectAuthor() {
-    $('.result-autor').click(function(e) {
+    $('.alert').click(function(e) {
         e.preventDefault()
 
         let idElement = $(this).attr('id')
         let nameElement = $(this).attr('data-name')
 
         $('#result').append(`
-        <div type="text" class="alert alert-info">${nameElement}</div>
+        <div type="text" class="alert alert-success">${nameElement}</div>
         <input type="hidden" name="USUARIO_IDUSUARIO" id="USUARIO_IDUSUARIO" value="${idElement}" />`)
 
         $('#' + idElement).hide()
@@ -36,8 +36,7 @@ $(document).ready(function() {
                 success: function(dados) {
                     for (const dado of dados) {
                         $('#autores').append(`
-                        <div class="alert alert-secondary" id="${dado.IDUSUARIO}" data-name="${dado.NOME}" role="alert">${dado.NOME}</div>
-                        `)
+                        <div class="alert alert-secondary" id="${dado.IDUSUARIO}" data-name="${dado.NOME}" role="alert">${dado.NOME}</div> `)
                     }
                     selectAuthor()
                 }
