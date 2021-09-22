@@ -6,14 +6,13 @@ function selectAuthor() {
         let nameElement = $(this).attr('data-name')
 
         $('#result').append(`
-        <input type="text" class="form-control" value="${nameElement}" disabled>
+        <div type="text" class="alert alert-info">${nameElement}</div>
         <input type="hidden" name="USUARIO_IDUSUARIO" id="USUARIO_IDUSUARIO" value="${idElement}" />`)
 
         $('#' + idElement).hide()
 
     })
 }
-
 
 
 $(document).ready(function() {
@@ -36,19 +35,11 @@ $(document).ready(function() {
                 url: 'src/usuario/model/find-usuario.php',
                 success: function(dados) {
                     for (const dado of dados) {
-<<<<<<< HEAD
-                        $('#autores').append(`<input type="text" id="${dado.IDUSUARIO}" data-name="${dado.NOME}" class="form-control result-autor" value="${dado.NOME}">`)
+                        $('#autores').append(`
+                        <div class="alert alert-secondary" id="${dado.IDUSUARIO}" data-name="${dado.NOME}" role="alert">${dado.NOME}</div>
+                        `)
                     }
                     selectAuthor()
-=======
-                        $('#autores').append(`<input type="text" name="" id="${dado.IDUSUARIO}" class="form-control result-autor" value="${dado.NOME}" >`)
-                    }
-                    $('.result-autor').click(function(e) {
-                        $('#autores').empty()
-                        $('#AUTOR').empty()
-                        $('#lista').append(`< input type="text" name="" id="${dado.IDUSUARIO}" class="form-control result-autor" value="${dado.NOME}"> `)
-                    })
->>>>>>> 4917cf22a6d45f52daa5a4884b8ec0dae84773d6
                 }
             })
 
