@@ -30,7 +30,7 @@
     <div class="form-group row">
         <div class="col-10">
             <!-- Autor -->
-            <input type="text" name="AUTOR" id="AUTOR" class="form-control" placeholder="Digite o nome do autor...">
+            <input type="text" name="AUTOR[]" id="AUTOR" class="form-control" placeholder="Digite o nome do autor...">
         </div>
         <div class="col-2">
             <button class="btn btn-primary btn-block btn-find"><i class="fas fa-search"></i> Buscar</button>
@@ -46,13 +46,13 @@
 
 
     <div class="form-group">
-    <form action="src/trabalho/model/enviar-imagem.php" method="post" enctype="multipart/form-data">
         <label>Arquivo</label>
         <input type="file" name="ARQUIVO" class="form-control" id="ARQUIVO">
-    </form>
     </div>
 
     <input type="hidden" name="IDTRABALHO" id="IDTRABALHO">
+    <input type="hidden" name="operacao" id="operacao" value="insert">
 </form>
 
 <script src="src/trabalho/controller/find-usuario.js"></script>
+<script src="src/trabalho/controller/save-trabalho.js"></script>

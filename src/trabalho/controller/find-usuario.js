@@ -7,7 +7,7 @@ function selectAuthor() {
 
         $('#result').append(`
         <div type="text" class="alert alert-success">${nameElement}</div>
-        <input type="hidden" name="USUARIO_IDUSUARIO" id="USUARIO_IDUSUARIO" value="${idElement}" />`)
+        <input type="hidden" name="USUARIO_IDUSUARIO[]" id="USUARIO_IDUSUARIO" value="${idElement}" />`)
 
         $('#' + idElement).hide()
 
